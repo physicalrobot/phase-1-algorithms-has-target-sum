@@ -1,6 +1,28 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  const sum = []
+
+  // pass a function to map
+
+  for (let i = 1; i < array.length; i++) {
+    for (let j = 0; j < array.length - 1; j++) {
+      if (i != j) {
+        sum.push(array[j] + array[i]);
+      } else {
+        sum.splice(array[j] + array[i])
+      }
+    }
+  }
+  for (element in sum) {
+    if (sum[element] === target) {
+      return sum[element] === target
+    }
+  }
+  return (sum[element] === target);
+
+
 }
+
 
 /* 
   Write the Big O time complexity of your function here
